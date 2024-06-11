@@ -107,14 +107,14 @@ func (c *ServerConfig) Complete() {
 	c.WebServer.Complete()
 	c.SSHTunnelGateway.Complete()
 
-	c.BindAddr = util.EmptyOr(c.BindAddr, "0.0.0.0")
+	// c.BindAddr = util.EmptyOr(c.BindAddr, "0.0.0.0")
 	c.BindPort = util.EmptyOr(c.BindPort, 7000)
-	if c.ProxyBindAddr == "" {
-		c.ProxyBindAddr = c.BindAddr
-	}
-	if c.ProxyBindAddrUDP == "" {
-		c.ProxyBindAddrUDP = c.BindAddr
-	}
+	// if c.ProxyBindAddr == "" {
+	// 	c.ProxyBindAddr = c.BindAddr
+	// }
+	// if c.ProxyBindAddrUDP == "" {
+	// 	c.ProxyBindAddrUDP = c.BindAddr
+	// }
 
 	if c.WebServer.Port > 0 {
 		c.WebServer.Addr = util.EmptyOr(c.WebServer.Addr, "0.0.0.0")
