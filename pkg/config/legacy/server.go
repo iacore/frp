@@ -57,6 +57,7 @@ type ServerCommonConf struct {
 	// ProxyBindAddr specifies the address that the proxy binds to. This value
 	// may be the same as BindAddr.
 	ProxyBindAddr string `ini:"proxy_bind_addr" json:"proxy_bind_addr"`
+	ProxyBindAddrUDP string `ini:"proxy_bind_addr_udp" json:"proxy_bind_addr_udp"`
 	// VhostHTTPPort specifies the port that the server listens for HTTP Vhost
 	// requests. If this value is 0, the server will not listen for HTTP
 	// requests. By default, this value is 0.

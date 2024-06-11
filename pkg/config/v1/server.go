@@ -40,6 +40,8 @@ type ServerConfig struct {
 	// ProxyBindAddr specifies the address that the proxy binds to. This value
 	// may be the same as BindAddr.
 	ProxyBindAddr string `json:"proxyBindAddr,omitempty"`
+	// udp bind addr
+	ProxyBindAddrUDP string `json:"proxyBindAddrUDP,omitempty"`
 	// VhostHTTPPort specifies the port that the server listens for HTTP Vhost
 	// requests. If this value is 0, the server will not listen for HTTP
 	// requests.
@@ -109,6 +111,9 @@ func (c *ServerConfig) Complete() {
 	c.BindPort = util.EmptyOr(c.BindPort, 7000)
 	if c.ProxyBindAddr == "" {
 		c.ProxyBindAddr = c.BindAddr
+	}
+	if c.ProxyBindAddrUDP == "" {
+		c.ProxyBindAddrUDP = c.BindAddr
 	}
 
 	if c.WebServer.Port > 0 {

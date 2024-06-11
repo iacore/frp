@@ -157,7 +157,7 @@ func NewService(cfg *v1.ServerConfig) (*Service, error) {
 		rc: &controller.ResourceController{
 			VisitorManager: visitor.NewManager(),
 			TCPPortManager: ports.NewManager("tcp", cfg.ProxyBindAddr, cfg.AllowPorts),
-			UDPPortManager: ports.NewManager("udp", cfg.ProxyBindAddr, cfg.AllowPorts),
+			UDPPortManager: ports.NewManager("udp", cfg.ProxyBindAddrUDP, cfg.AllowPorts),
 		},
 		sshTunnelListener: netpkg.NewInternalListener(),
 		httpVhostRouter:   vhost.NewRouters(),

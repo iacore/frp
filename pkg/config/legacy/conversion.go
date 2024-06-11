@@ -109,6 +109,7 @@ func Convert_ServerCommonConf_To_v1(conf *ServerCommonConf) *v1.ServerConfig {
 	out.Transport.QUIC.MaxIncomingStreams = conf.QUICMaxIncomingStreams
 
 	out.ProxyBindAddr = conf.ProxyBindAddr
+	out.ProxyBindAddrUDP = conf.ProxyBindAddrUDP
 	out.VhostHTTPPort = conf.VhostHTTPPort
 	out.VhostHTTPSPort = conf.VhostHTTPSPort
 	out.TCPMuxHTTPConnectPort = conf.TCPMuxHTTPConnectPort

@@ -89,7 +89,7 @@ func (pxy *UDPProxy) Run() (remoteAddr string, err error) {
 
 	remoteAddr = fmt.Sprintf(":%d", pxy.realBindPort)
 	pxy.cfg.RemotePort = pxy.realBindPort
-	addr, errRet := net.ResolveUDPAddr("udp", net.JoinHostPort(pxy.serverCfg.ProxyBindAddr, strconv.Itoa(pxy.realBindPort)))
+	addr, errRet := net.ResolveUDPAddr("udp", net.JoinHostPort(pxy.serverCfg.ProxyBindAddrUDP, strconv.Itoa(pxy.realBindPort)))
 	if errRet != nil {
 		err = errRet
 		return
